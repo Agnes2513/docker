@@ -323,7 +323,7 @@ export default function App() {
                             alignItems: "center", marginBottom: 16 }}>
                 <div style={{ fontSize: 11, color: C.accent, letterSpacing: 1 }}>ALL IMAGES</div>
                 <input
-                  placeholder="🔍  Search image name or OS..."
+                  placeholder="  Search image name or OS..."
                   value={search}
                   onChange={e => { setSearch(e.target.value); setPage(0); }}
                   style={{
