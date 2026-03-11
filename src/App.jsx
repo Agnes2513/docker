@@ -380,8 +380,8 @@ export default function App() {
                           {d.network_exploitable_count ?? "—"}
                         </td>
                         <td style={{ padding: "7px 10px", whiteSpace: "nowrap" }}>
-                          {d.run_as_root ? <span style={{ color: C.danger }}>🔴 Yes</span>
-                                         : <span style={{ color: C.ok   }}>🟢 No</span>}
+                          {d.run_as_root ? <span style={{ color: C.danger }}>Yes</span>
+                                         : <span style={{ color: C.ok   }}> No</span>}
                         </td>
                         <td style={{ padding: "7px 10px", whiteSpace: "nowrap" }}>
                           <Badge value={d.propagated_risk || 0} />
@@ -391,7 +391,7 @@ export default function App() {
                                     : <span style={{ color: C.danger }}>❌</span>}
                         </td>
                         <td style={{ padding: "7px 10px", whiteSpace: "nowrap" }}>
-                          {d.anomaly ? "⚠️" : <span style={{ color: C.muted }}>—</span>}
+                          {d.anomaly ? "✅" : <span style={{ color: C.muted }}>—</span>}
                         </td>
                       </tr>
                     ))}
@@ -536,10 +536,10 @@ export default function App() {
           </table>
 
           <div style={{ fontSize: 10, color: C.muted, lineHeight: 2.2 }}>
-            <div>✅ True Negatives (TN): {metrics.confusion_matrix.tn}</div>
-            <div>✅ True Positives (TP): {metrics.confusion_matrix.tp}</div>
-            <div>⚠️ False Positives (FP): {metrics.confusion_matrix.fp}</div>
-            <div>🚨 False Negatives (FN): {metrics.confusion_matrix.fn}</div>
+            <div> True Negatives (TN): {metrics.confusion_matrix.tn}</div>
+            <div> True Positives (TP): {metrics.confusion_matrix.tp}</div>
+            <div> False Positives (FP): {metrics.confusion_matrix.fp}</div>
+            <div> False Negatives (FN): {metrics.confusion_matrix.fn}</div>
           </div>
         </div>
       </div>
@@ -668,30 +668,30 @@ boxShadow: (img.propagated_risk||0) > 0.75 ? `0 0 14px ${C.danger}33` : "none",
                     {img.Critical > 0 && (
                       <span style={{ fontSize: 9, color: C.danger, background: C.danger+"18",
                                      borderRadius: 3, padding: "2px 7px" }}>
-                        🔴 {img.Critical} Critical
+                         {img.Critical} Critical
                       </span>
                     )}
                     {img.High > 0 && (
                       <span style={{ fontSize: 9, color: C.high, background: C.high+"18",
                                      borderRadius: 3, padding: "2px 7px" }}>
-                        🟠 {img.High} High
+                         {img.High} High
                       </span>
                     )}
                     {(img.network_exploitable_count || 0) > 0 && (
                       <span style={{ fontSize: 9, color: C.warn, background: C.warn+"18",
                                      borderRadius: 3, padding: "2px 7px" }}>
-                        🌐 {img.network_exploitable_count} NetExp
+                         {img.network_exploitable_count} NetExp
                       </span>
                     )}
                     {img.run_as_root === 1 && (
                       <span style={{ fontSize: 9, color: C.danger, background: C.danger+"18",
                                      borderRadius: 3, padding: "2px 7px" }}>
-                        🔑 root
+                         root
                       </span>
                     )}
                     {img.anomaly === 1 && (
                       <span style={{ fontSize: 9, color: C.purple, background: C.purple+"18",
-                                     borderRadius: 3, padding: "2px 7px" }}>⚠️ anomaly</span>
+                                     borderRadius: 3, padding: "2px 7px" }}> anomaly</span>
                     )}
                     {img.is_base_image === 1 && (
                       <span style={{ fontSize: 9, color: C.teal, background: C.teal+"18",
@@ -898,7 +898,7 @@ boxShadow: (img.propagated_risk||0) > 0.75 ? `0 0 14px ${C.danger}33` : "none",
                         {b.run_as_root === 1 && (
                           <span style={{ fontSize: 8, color: C.warn, background: C.warn+"18",
                                          borderRadius: 3, padding: "1px 6px" }}>
-                            🔑 root
+                             root
                           </span>
                         )}
                       </div>
@@ -936,7 +936,7 @@ boxShadow: (img.propagated_risk||0) > 0.75 ? `0 0 14px ${C.danger}33` : "none",
                 <div style={{ ...panel, borderLeft: `4px solid ${C.teal}`,
                                background: C.teal + "0d" }}>
                   <div style={{ fontSize: 11, color: C.teal, letterSpacing: 1, marginBottom: 12 }}>
-                    📊 PROPAGATION SUMMARY
+                     PROPAGATION SUMMARY
                   </div>
                   {[
                     ["Total images",       data.length],
